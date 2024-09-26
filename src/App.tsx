@@ -11,7 +11,7 @@ import { PageContainer } from "./components/page-container/page-container";
 const article = {
   imageSrc: "https://via.placeholder.com/300",
   title: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-  desriction:
+  description:
     "Ea soluta commodi quam exercitationem tempore molestias illo accusamus, quisquam aliquam eaque tenetur error tempora culpa, illum expedita delectus distinctio, numquam nihil.",
 };
 
@@ -28,7 +28,7 @@ function App() {
             <img src={article.imageSrc} alt={article.title} />
             <ArticleInfo>
               <ArticleTitle>{article.title}</ArticleTitle>
-              <ArticleDescription>{article.desriction}</ArticleDescription>
+              <ArticleDescription>{article.description}</ArticleDescription>
             </ArticleInfo>
           </Article>
         </ArticleList>
