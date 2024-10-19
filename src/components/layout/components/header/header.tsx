@@ -1,7 +1,7 @@
 import { Link, NavLink, useLocation, useParams } from 'react-router-dom';
 
 import { Container } from '~/components/container';
-import { getTranslation } from '~/utils/locales';
+import { getTranslation, locales } from '~/utils/locales';
 
 import classes from './header.module.css';
 
@@ -40,12 +40,18 @@ export const Header: React.FC = () => {
           ))}
         </ul>
 
-        <Link
-          to={`${lang === 'ka' ? '/en' : '/ka'}${location.pathname.slice(3)}`}
-          className={classes.langLink}
-        >
-          {lang === 'ka' ? 'Eng' : 'ქარ'}
-        </Link>
+        <ul className={classes.langItems}>
+          {locales.map((locale) => (
+            <li key={locale} className={classes.langItem}>
+              <Link
+                to={`/${locale}${location.pathname.slice(3)}`}
+                className={locale === lang ? classes.langLink__active : classes.langLink}
+              >
+                {locale}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </header>
     </Container>
   );

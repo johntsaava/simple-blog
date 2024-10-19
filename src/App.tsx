@@ -4,7 +4,7 @@ import { Navigate, Outlet, Route, Routes, useParams } from 'react-router-dom';
 import { Layout } from '~/components/layout';
 import { Loading } from '~/components/loading';
 import { articlesInitialState, articlesReducer } from '~/reducers/article-reducer';
-import { locales } from '~/utils/locales';
+import { defaultLocale, locales } from '~/utils/locales';
 
 const HomePage = lazy(() => import('~/pages/home'));
 const AboutPage = lazy(() => import('~/pages/about'));
@@ -17,7 +17,7 @@ const LangGuard: React.FC = () => {
   const lang = params.lang as string;
 
   if (!locales.includes(lang)) {
-    return <Navigate to='/ka' />;
+    return <Navigate to={`/${defaultLocale}`} />;
   }
 
   return <Outlet />;
@@ -72,7 +72,7 @@ function App() {
           />
         </Route>
       </Route>
-      <Route path='*' element={<Navigate to='/ka' />} />
+      <Route path='*' element={<Navigate to={`/${defaultLocale}`} />} />
     </Routes>
   );
 }

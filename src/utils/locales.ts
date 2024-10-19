@@ -37,14 +37,16 @@ const namespaces = {
 
 export const locales = Object.keys(namespaces);
 
+export const defaultLocale = 'ka';
+
 export function getTranslation(lang?: string) {
   if (!lang || !locales.includes(lang)) {
     throw new Error('unknown locale');
   }
 
-  const selectedLocale = namespaces[lang as keyof typeof namespaces];
+  const selectedNamespace = namespaces[lang as keyof typeof namespaces];
 
-  return (key: keyof (typeof namespaces)['en']) => {
-    return selectedLocale[key];
+  return (key: keyof (typeof namespaces)['ka']) => {
+    return selectedNamespace[key];
   };
 }
