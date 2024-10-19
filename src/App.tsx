@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate, Outlet, useParams } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { Layout } from "./components/layout";
 import { Loading } from "./components/loading";
@@ -7,35 +7,49 @@ const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
 const NotFound = lazy(() => import("./pages/not-found"));
 
+const LangGuard: React.FC = () => {
+  const params = useParams();
+  const lang = params.lang as string;
+
+  if (!["ka", "en"].includes(lang)) {
+    return <Navigate to="/ka" />;
+  }
+
+  return <Outlet />;
+};
+
 function App() {
   return (
     <Routes>
-      <Route element={<Layout />}>
-        <Route
-          path="/"
-          element={
-            <Suspense fallback={<Loading />}>
-              <Home />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <Suspense fallback={<Loading />}>
-              <About />
-            </Suspense>
-          }
-        />
-        <Route
-          path="*"
-          element={
-            <Suspense fallback={<Loading />}>
-              <NotFound />
-            </Suspense>
-          }
-        />
+      <Route path=":lang" element={<LangGuard />}>
+        <Route element={<Layout />}>
+          <Route
+            index
+            element={
+              <Suspense fallback={<Loading />}>
+                <Home />
+              </Suspense>
+            }
+          />
+          <Route
+            path="about"
+            element={
+              <Suspense fallback={<Loading />}>
+                <About />
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<Loading />}>
+                <NotFound />
+              </Suspense>
+            }
+          />
+        </Route>
       </Route>
+      <Route path="*" element={<Navigate to="/ka" />} />
     </Routes>
   );
 }

@@ -2,6 +2,7 @@
   top: 0;
   position: static;
   display: flex;
+  align-items: center;
   gap: 1rem;
   padding: 1rem;
 }
@@ -24,4 +25,8 @@
 .navItemLink__active {
   padding: 0.5rem;
   text-decoration: underline;
+}
+
+.langLink {
+  margin-left: auto;
 }
