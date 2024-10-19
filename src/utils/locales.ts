@@ -4,28 +4,22 @@ const namespaces = {
     home: 'მთავარი',
     about: 'ჩვენს შესახებ',
     copyRight: 'ყველა უფლება დაცულია.',
-    heroTitle: 'ლორემ იპსუმ გაცომებული პროცესიებით იქაც სპეციალობაზეც ტეტიურად ღრმად გაუტოლა ბევრ.',
+    heroTitle: 'გამარჯობა და კეთილი იყოს თქვენი მობრძანება!',
     heroDescription:
-      'ქვეითად გავაკეთებთო გვიგვინებითა ბაღად ნამიან გავაკეთებინე. მდაბალი მიდგა წყალწაღებულს ნამიან მაიცა გაცომებული გათხვირულმა, შეგვეპარება ჰშვენის გაიშოტა წვერს, ზედმეტისგან ოთხცხენიანი.',
-    homeTitle: 'ლორემ იპსუმ გაცომებული პროცესიებით იქაც სპეციალობაზეც ტეტიურად ღრმად გაუტოლა ბევრ.',
-    homeDescription:
-      'ეამბორეო მოხელეებისა შეაყენა ვედროთი გავაკეთებინე ასეულს. ასეულს განათლებული მეკობრეობისათვის იქაც, ოყრაყი, გავაკეთებთო მოხელეებისა ქონშია უცოლშვილო ემხრობიან ბიძები გალაფული, დათოსაც დაიჯერებდით. ქვეითად გავაკეთებთო გვიგვინებითა ბაღად ნამიან გავაკეთებინე. მდაბალი მიდგა წყალწაღებულს ნამიან მაიცა გაცომებული გათხვირულმა, შეგვეპარება ჰშვენის გაიშოტა წვერს, ზედმეტისგან ოთხცხენიანი. მენახირედ ოყრაყი ყრილობები გენიალობამ ნამიან, ტეტიურად შეკითხვაში დანამომარჯვებულ ბევრ, გეგმის დაანებებს გალაფული. იძიებდა მიდგა ხსებებაზე გალაფული სიახლე დააგვირგვინა გამოტანილ ოთხცხენიანი ჩიქორთული უცოლშვილო ბაღად, ევსებოდა გათხვირულმა უიმედობა ელიტური. ხსებებაზე ემხრობიან შეაყენა დანამომარჯვებულ კარისა დაიჯერებდით, ზაბრისკი ყრილობები ელიტური.',
+      'ჩვენი მარტივი ბლოგი გთავაზობთ საინტერესო სტატიებს და განახლებებს სხვადასხვა თემებზე. დარჩით ჩვენთან და აღმოაჩინეთ ახალი შთაბეჭდილებები!',
     aboutDescription:
-      'ქვეითად გავაკეთებთო გვიგვინებითა ბაღად ნამიან გავაკეთებინე. მდაბალი მიდგა წყალწაღებულს ნამიან მაიცა გაცომებული გათხვირულმა, შეგვეპარება ჰშვენის გაიშოტა წვერს, ზედმეტისგან ოთხცხენიანი.',
+      'ჩვენი მიზანია შევქმნათ პლატფორმა, სადაც მომხმარებლებს შეუძლიათ გამოხატონ საკუთარი აზრი და გაეცნონ უახლეს ინფორმაციას. ბლოგი განკუთვნილია ყველა ასაკის მკითხველისთვის, ვინც დაინტერესებულია თანამედროვე საკითხებით.',
   },
   en: {
-    title: 'Simple blog',
+    title: 'Simple Blog',
     home: 'Home',
-    about: 'About',
+    about: 'About Us',
     copyRight: 'All rights reserved.',
-    heroTitle: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    heroTitle: 'Welcome to Our Simple Blog!',
     heroDescription:
-      'Ea soluta commodi quam exercitationem tempore molestias illo accusamus, quisquam aliquam eaque tenetur error tempora culpa, illum expedita delectus distinctio, numquam nihil.',
-    homeTitle: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-    homeDescription:
-      'Ea soluta commodi quam exercitationem tempore molestias illo accusamus, quisquam aliquam eaque tenetur error tempora culpa, illum expedita delectus distinctio, numquam nihil.',
+      'Our blog offers insightful articles and updates on a wide range of topics. Stay with us and discover fresh perspectives!',
     aboutDescription:
-      'Ea soluta commodi quam exercitationem tempore molestias illo accusamus, quisquam aliquam eaque tenetur error tempora culpa, illum expedita delectus distinctio, numquam nihil.',
+      'Our goal is to create a platform where users can express their thoughts and stay informed on the latest news. This blog is designed for readers of all ages who are interested in modern topics and discussions.',
   },
 };
 
