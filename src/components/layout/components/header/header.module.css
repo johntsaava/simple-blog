@@ -1,0 +1,27 @@
+.headerRoot {
+  top: 0;
+  position: static;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.navItem {
+  display: flex;
+}
+
+.navItemLink {
+  padding: 0.5rem;
+}
+
+.navItemLink__active {
+  padding: 0.5rem;
+  text-decoration: underline;
+}
