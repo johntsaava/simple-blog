@@ -1,15 +1,16 @@
+import { useParams } from "react-router-dom";
 import { Page } from "../components/page/page";
+import { getTranslation } from "../utils/locales";
 
 const About: React.FC = () => {
+  const params = useParams();
+  const lang = params.lang as string;
+  const t = getTranslation(lang);
+
   return (
     <Page>
       <section>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio id
-          iusto praesentium voluptate necessitatibus corporis delectus eaque
-          voluptates, neque, repellendus perferendis tempora molestias fugiat
-          illo iure cum quisquam sunt corrupti.
-        </p>
+        <p>{t("aboutDescription")}</p>
       </section>
     </Page>
   );

@@ -2,6 +2,7 @@ import { Routes, Route, Navigate, Outlet, useParams } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { Layout } from "./components/layout";
 import { Loading } from "./components/loading";
+import { locales } from "./utils/locales";
 
 const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
@@ -11,7 +12,7 @@ const LangGuard: React.FC = () => {
   const params = useParams();
   const lang = params.lang as string;
 
-  if (!["ka", "en"].includes(lang)) {
+  if (!locales.includes(lang)) {
     return <Navigate to="/ka" />;
   }
 

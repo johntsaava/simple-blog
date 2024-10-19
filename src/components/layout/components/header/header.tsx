@@ -1,19 +1,21 @@
 import { Link, NavLink, useParams } from "react-router-dom";
 import classes from "./header.module.css";
+import { getTranslation } from "../../../../utils/locales";
 
 export const Header: React.FC = () => {
   const params = useParams();
   const lang = params.lang as string;
+  const t = getTranslation(lang);
 
   const navItems = [
-    { name: "Home", path: `/${lang}` },
-    { name: "about", path: "about" },
+    { name: t("home"), path: `/${lang}` },
+    { name: t("about"), path: "about" },
   ];
 
   return (
     <header className={classes.headerRoot}>
       <Link to={`/${lang}`}>
-        <h1>Simple blog</h1>
+        <h1>{t("title")}</h1>
       </Link>
 
       <ul className={classes.navItems}>
