@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
   return (
     <header className={classes.headerRoot}>
       <Link to={`/${lang}`}>
-        <h1>{t('title')}</h1>
+        <h1 className={classes.title}>{t('title')}</h1>
       </Link>
 
       <ul className={classes.navItems}>
