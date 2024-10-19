@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import { Article } from "../components/article";
-import { ArticleList } from "../components/article-list";
-import { HeroSection } from "../components/hero-section/hero-section";
-import { Page } from "../components/page/page";
-import { getTranslation } from "../utils/locales";
+import { Article } from "~/components/article";
+import { ArticleList } from "~/components/article-list";
+import { HeroSection } from "~/components/hero-section/hero-section";
+import { Page } from "~/components/page";
+import { getTranslation } from "~/utils/locales";
 
 const Home: React.FC = () => {
   const params = useParams();

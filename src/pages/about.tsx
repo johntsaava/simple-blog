@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import { Page } from "../components/page/page";
-import { getTranslation } from "../utils/locales";
+import { Page } from "~/components/page";
+import { getTranslation } from "~/utils/locales";
 
 const About: React.FC = () => {
   const params = useParams();

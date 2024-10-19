@@ -1,12 +1,12 @@
 import { Routes, Route, Navigate, Outlet, useParams } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import { Layout } from "./components/layout";
-import { Loading } from "./components/loading";
-import { locales } from "./utils/locales";
+import { Layout } from "~/components/layout";
+import { Loading } from "~/components/loading";
+import { locales } from "~/utils/locales";
 
-const Home = lazy(() => import("./pages/home"));
-const About = lazy(() => import("./pages/about"));
-const NotFound = lazy(() => import("./pages/not-found"));
+const Home = lazy(() => import("~/pages/home"));
+const About = lazy(() => import("~/pages/about"));
+const NotFound = lazy(() => import("~/pages/not-found"));
 
 const LangGuard: React.FC = () => {
   const params = useParams();
