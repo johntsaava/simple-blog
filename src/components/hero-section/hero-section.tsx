@@ -1,6 +1,7 @@
-import { useParams } from "react-router-dom";
-import classes from "./hero-section.module.css";
-import { getTranslation } from "../../utils/locales";
+import { useParams } from 'react-router-dom';
+
+import { getTranslation } from '../../utils/locales';
+import classes from './hero-section.module.css';
 
 export const HeroSection: React.FC = () => {
   const params = useParams();
@@ -9,8 +10,8 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className={classes.heroSectionRoot}>
-      <h2 className={classes.title}>{t("heroTitle")}</h2>
-      <p>{t("heroDescription")}</p>
+      <h2 className={classes.title}>{t('heroTitle')}</h2>
+      <p>{t('heroDescription')}</p>
     </section>
   );
 };

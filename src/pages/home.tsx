@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
-import { Article } from "~/components/article";
-import { ArticleList } from "~/components/article-list";
-import { HeroSection } from "~/components/hero-section/hero-section";
-import { Page } from "~/components/page";
-import { getTranslation } from "~/utils/locales";
+import { useParams } from 'react-router-dom';
+
+import { Article } from '~/components/article';
+import { ArticleList } from '~/components/article-list';
+import { HeroSection } from '~/components/hero-section/hero-section';
+import { Page } from '~/components/page';
+import { getTranslation } from '~/utils/locales';
 
 const Home: React.FC = () => {
   const params = useParams();
@@ -11,9 +12,9 @@ const Home: React.FC = () => {
   const t = getTranslation(lang);
 
   const article = {
-    imageSrc: "https://via.assets.so/img.jpg?w=300&h=300&tc=white&bg=lightgrey",
-    title: t("homeTitle"),
-    description: t("homeDescription"),
+    imageSrc: 'https://via.assets.so/img.jpg?w=300&h=300&tc=white&bg=lightgrey',
+    title: t('homeTitle'),
+    description: t('homeDescription'),
   };
 
   return (

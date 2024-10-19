@@ -1,6 +1,7 @@
-import { Link, NavLink, useLocation, useParams } from "react-router-dom";
-import classes from "./header.module.css";
-import { getTranslation } from "../../../../utils/locales";
+import { Link, NavLink, useLocation, useParams } from 'react-router-dom';
+
+import { getTranslation } from '../../../../utils/locales';
+import classes from './header.module.css';
 
 export const Header: React.FC = () => {
   const location = useLocation();
@@ -9,14 +10,14 @@ export const Header: React.FC = () => {
   const t = getTranslation(lang);
 
   const navItems = [
-    { name: t("home"), path: `/${lang}` },
-    { name: t("about"), path: "about" },
+    { name: t('home'), path: `/${lang}` },
+    { name: t('about'), path: 'about' },
   ];
 
   return (
     <header className={classes.headerRoot}>
       <Link to={`/${lang}`}>
-        <h1>{t("title")}</h1>
+        <h1>{t('title')}</h1>
       </Link>
 
       <ul className={classes.navItems}>
@@ -36,10 +37,10 @@ export const Header: React.FC = () => {
       </ul>
 
       <Link
-        to={`${lang === "ka" ? "/en" : "/ka"}${location.pathname.slice(3)}`}
+        to={`${lang === 'ka' ? '/en' : '/ka'}${location.pathname.slice(3)}`}
         className={classes.langLink}
       >
-        {lang === "ka" ? "Eng" : "ქარ"}
+        {lang === 'ka' ? 'Eng' : 'ქარ'}
       </Link>
     </header>
   );

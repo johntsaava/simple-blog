@@ -1,6 +1,7 @@
-import { useParams } from "react-router-dom";
-import { Page } from "~/components/page";
-import { getTranslation } from "~/utils/locales";
+import { useParams } from 'react-router-dom';
+
+import { Page } from '~/components/page';
+import { getTranslation } from '~/utils/locales';
 
 const About: React.FC = () => {
   const params = useParams();
@@ -10,7 +11,7 @@ const About: React.FC = () => {
   return (
     <Page>
       <section>
-        <p>{t("aboutDescription")}</p>
+        <p>{t('aboutDescription')}</p>
       </section>
     </Page>
   );

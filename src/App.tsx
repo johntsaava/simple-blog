@@ -1,19 +1,20 @@
-import { Routes, Route, Navigate, Outlet, useParams } from "react-router-dom";
-import { lazy, Suspense } from "react";
-import { Layout } from "~/components/layout";
-import { Loading } from "~/components/loading";
-import { locales } from "~/utils/locales";
+import { Suspense, lazy } from 'react';
+import { Navigate, Outlet, Route, Routes, useParams } from 'react-router-dom';
 
-const Home = lazy(() => import("~/pages/home"));
-const About = lazy(() => import("~/pages/about"));
-const NotFound = lazy(() => import("~/pages/not-found"));
+import { Layout } from '~/components/layout';
+import { Loading } from '~/components/loading';
+import { locales } from '~/utils/locales';
+
+const Home = lazy(() => import('~/pages/home'));
+const About = lazy(() => import('~/pages/about'));
+const NotFound = lazy(() => import('~/pages/not-found'));
 
 const LangGuard: React.FC = () => {
   const params = useParams();
   const lang = params.lang as string;
 
   if (!locales.includes(lang)) {
-    return <Navigate to="/ka" />;
+    return <Navigate to='/ka' />;
   }
 
   return <Outlet />;
@@ -22,7 +23,7 @@ const LangGuard: React.FC = () => {
 function App() {
   return (
     <Routes>
-      <Route path=":lang" element={<LangGuard />}>
+      <Route path=':lang' element={<LangGuard />}>
         <Route element={<Layout />}>
           <Route
             index
@@ -33,7 +34,7 @@ function App() {
             }
           />
           <Route
-            path="about"
+            path='about'
             element={
               <Suspense fallback={<Loading />}>
                 <About />
@@ -41,7 +42,7 @@ function App() {
             }
           />
           <Route
-            path="*"
+            path='*'
             element={
               <Suspense fallback={<Loading />}>
                 <NotFound />
@@ -50,7 +51,7 @@ function App() {
           />
         </Route>
       </Route>
-      <Route path="*" element={<Navigate to="/ka" />} />
+      <Route path='*' element={<Navigate to='/ka' />} />
     </Routes>
   );
 }

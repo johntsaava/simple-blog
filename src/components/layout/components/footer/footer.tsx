@@ -1,6 +1,7 @@
-import { useParams } from "react-router-dom";
-import classes from "./footer.module.css";
-import { getTranslation } from "../../../../utils/locales";
+import { useParams } from 'react-router-dom';
+
+import { getTranslation } from '../../../../utils/locales';
+import classes from './footer.module.css';
 
 export const Footer: React.FC = () => {
   const params = useParams();
@@ -9,7 +10,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className={classes.footerRoot}>
-      © {new Date().getFullYear()} {t("title")}. {t("copyRight")}
+      © {new Date().getFullYear()} {t('title')}. {t('copyRight')}
     </footer>
   );
 };
