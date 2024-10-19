@@ -1,5 +1,10 @@
 const namespaces = {
   ka: {
+    nameKa: 'სათაური ქართულად',
+    nameEn: 'სათაური ინგლისურად',
+    descriptionKa: 'აღწერა ქართულად',
+    descriptionEn: 'აღწერა ინგლისურად',
+    create: 'შექმნა',
     title: 'მარტივი ბლოგი',
     home: 'მთავარი',
     about: 'ჩვენს შესახებ',
@@ -11,6 +16,11 @@ const namespaces = {
       'ჩვენი მიზანია შევქმნათ პლატფორმა, სადაც მომხმარებლებს შეუძლიათ გამოხატონ საკუთარი აზრი და გაეცნონ უახლეს ინფორმაციას. ბლოგი განკუთვნილია ყველა ასაკის მკითხველისთვის, ვინც დაინტერესებულია თანამედროვე საკითხებით.',
   },
   en: {
+    nameKa: 'Title in Georgian',
+    nameEn: 'Title in English',
+    descriptionKa: 'Description in Georgian',
+    descriptionEn: 'Description in English',
+    create: 'Create',
     title: 'Simple Blog',
     home: 'Home',
     about: 'About Us',

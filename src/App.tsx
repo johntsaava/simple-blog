@@ -1,13 +1,15 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useReducer } from 'react';
 import { Navigate, Outlet, Route, Routes, useParams } from 'react-router-dom';
 
 import { Layout } from '~/components/layout';
 import { Loading } from '~/components/loading';
+import { articlesInitialState, articlesReducer } from '~/reducers/article-reducer';
 import { locales } from '~/utils/locales';
 
 const Home = lazy(() => import('~/pages/home'));
 const About = lazy(() => import('~/pages/about'));
 const NotFound = lazy(() => import('~/pages/not-found'));
+const ArticleCreate = lazy(() => import('~/pages/article-create'));
 
 const LangGuard: React.FC = () => {
   const params = useParams();
@@ -21,6 +23,8 @@ const LangGuard: React.FC = () => {
 };
 
 function App() {
+  const [articles, dispatch] = useReducer(articlesReducer, articlesInitialState);
+
   return (
     <Routes>
       <Route path=':lang' element={<LangGuard />}>
@@ -29,7 +33,15 @@ function App() {
             index
             element={
               <Suspense fallback={<Loading />}>
-                <Home />
+                <Home articles={articles} />
+              </Suspense>
+            }
+          />
+          <Route
+            path='create'
+            element={
+              <Suspense fallback={<Loading />}>
+                <ArticleCreate dispatch={dispatch} />
               </Suspense>
             }
           />
