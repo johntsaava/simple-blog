@@ -49,16 +49,16 @@ const ArticleCreate: React.FC<ArticleCreateProps> = ({ dispatch }) => {
         }}
       >
         <label htmlFor='titleKa'>{t('nameKa')}</label>
-        <input id='titleKa' type='text' name='titleKa' />
+        <input id='titleKa' type='text' name='titleKa' required minLength={2} maxLength={100} />
 
         <label htmlFor='titleEn'>{t('nameEn')}</label>
-        <input id='titleEn' type='text' name='titleEn' />
+        <input id='titleEn' type='text' name='titleEn' required minLength={2} maxLength={100} />
 
         <label htmlFor='descriptionKa'>{t('descriptionKa')}</label>
-        <textarea id='descriptionKa' name='descriptionKa' />
+        <textarea id='descriptionKa' name='descriptionKa' required minLength={10} maxLength={500} />
 
         <label htmlFor='descriptionEn'>{t('descriptionEn')}</label>
-        <textarea id='descriptionEn' name='descriptionEn' />
+        <textarea id='descriptionEn' name='descriptionEn' required minLength={10} maxLength={500} />
 
         <Button type='submit'>{t('create')}</Button>
       </form>
