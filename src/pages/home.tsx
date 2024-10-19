@@ -2,8 +2,8 @@ import { Link, useParams } from 'react-router-dom';
 
 import { Article } from '~/components/article';
 import { ArticleList } from '~/components/article-list';
+import { Container } from '~/components/container';
 import { HeroSection } from '~/components/hero-section/hero-section';
-import { Page } from '~/components/page';
 import { Article as ArticleType } from '~/reducers/article-reducer';
 
 type HomeProps = {
@@ -17,7 +17,7 @@ const HomePage: React.FC<HomeProps> = ({ articles }) => {
   return (
     <>
       <HeroSection />
-      <Page>
+      <Container>
         <ArticleList>
           {articles.map((article) => (
             <Link to={`article/${article.id}`} key={article.id}>
@@ -36,7 +36,7 @@ const HomePage: React.FC<HomeProps> = ({ articles }) => {
             </Link>
           ))}
         </ArticleList>
-      </Page>
+      </Container>
     </>
   );
 };

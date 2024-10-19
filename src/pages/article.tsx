@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 
+import { Container } from '~/components/container';
 import { NotFound } from '~/components/not-found';
-import { Page } from '~/components/page';
 import { Article } from '~/reducers/article-reducer';
 
 type ArticlePageProps = {
@@ -20,11 +20,11 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ articles }) => {
   }
 
   return (
-    <Page>
+    <Container>
       <img src={article.imageSrc} alt={article.title[lang]} width={512} height={512} />
       <h1>{article.title[lang]}</h1>
       <p>{article.description[lang]}</p>
-    </Page>
+    </Container>
   );
 };
 

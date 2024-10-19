@@ -1,11 +1,11 @@
+import { Container } from '~/components/container';
 import { NotFound } from '~/components/not-found';
-import { Page } from '~/components/page';
 
 const NotFoundPage: React.FC = () => {
   return (
-    <Page>
+    <Container>
       <NotFound />
-    </Page>
+    </Container>
   );
 };
 

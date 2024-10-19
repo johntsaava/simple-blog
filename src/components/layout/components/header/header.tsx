@@ -1,6 +1,8 @@
 import { Link, NavLink, useLocation, useParams } from 'react-router-dom';
 
-import { getTranslation } from '../../../../utils/locales';
+import { Container } from '~/components/container';
+import { getTranslation } from '~/utils/locales';
+
 import classes from './header.module.css';
 
 export const Header: React.FC = () => {
@@ -16,33 +18,35 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className={classes.headerRoot}>
-      <Link to={`/${lang}`}>
-        <h1 className={classes.title}>{t('title')}</h1>
-      </Link>
+    <Container>
+      <header className={classes.headerRoot}>
+        <Link to={`/${lang}`}>
+          <h1 className={classes.title}>{t('title')}</h1>
+        </Link>
 
-      <ul className={classes.navItems}>
-        {navItems.map(({ name, path }) => (
-          <li key={path} className={classes.navItem}>
-            <NavLink
-              end
-              to={path}
-              className={({ isActive }) =>
-                isActive ? classes.navItemLink__active : classes.navItemLink
-              }
-            >
-              {name}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+        <ul className={classes.navItems}>
+          {navItems.map(({ name, path }) => (
+            <li key={path} className={classes.navItem}>
+              <NavLink
+                end
+                to={path}
+                className={({ isActive }) =>
+                  isActive ? classes.navItemLink__active : classes.navItemLink
+                }
+              >
+                {name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
 
-      <Link
-        to={`${lang === 'ka' ? '/en' : '/ka'}${location.pathname.slice(3)}`}
-        className={classes.langLink}
-      >
-        {lang === 'ka' ? 'Eng' : 'ქარ'}
-      </Link>
-    </header>
+        <Link
+          to={`${lang === 'ka' ? '/en' : '/ka'}${location.pathname.slice(3)}`}
+          className={classes.langLink}
+        >
+          {lang === 'ka' ? 'Eng' : 'ქარ'}
+        </Link>
+      </header>
+    </Container>
   );
 };

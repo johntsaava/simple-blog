@@ -5,7 +5,7 @@ const namespaces = {
     nameEn: 'სათაური ინგლისურად',
     descriptionKa: 'აღწერა ქართულად',
     descriptionEn: 'აღწერა ინგლისურად',
-    create: 'შექმნა',
+    create: 'დამატება',
     title: 'მარტივი ბლოგი',
     home: 'მთავარი',
     about: 'ჩვენს შესახებ',

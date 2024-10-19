@@ -2,7 +2,7 @@ import { Dispatch, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { Button } from '~/components/button';
-import { Page } from '~/components/page';
+import { Container } from '~/components/container';
 import { ArticlesAction } from '~/reducers/article-reducer';
 import { getTranslation } from '~/utils/locales';
 
@@ -51,7 +51,7 @@ const ArticleCreatePage: React.FC<ArticleCreateProps> = ({ dispatch }) => {
   };
 
   return (
-    <Page>
+    <Container>
       <form
         onSubmit={handleCreateArticle}
         style={{
@@ -80,7 +80,7 @@ const ArticleCreatePage: React.FC<ArticleCreateProps> = ({ dispatch }) => {
 
         <Button type='submit'>{t('create')}</Button>
       </form>
-    </Page>
+    </Container>
   );
 };
 

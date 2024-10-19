@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
 }
 
 .title {
@@ -34,4 +33,13 @@
 
 .langLink {
   margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .headerRoot {
+    flex-direction: column;
+  }
+  .navItems {
+    flex-direction: column;
+  }
 }

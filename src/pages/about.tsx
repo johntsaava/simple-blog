@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 
-import { Page } from '~/components/page';
+import { Container } from '~/components/container';
 import { getTranslation } from '~/utils/locales';
 
 const AboutPage: React.FC = () => {
@@ -9,11 +9,11 @@ const AboutPage: React.FC = () => {
   const t = getTranslation(lang);
 
   return (
-    <Page>
+    <Container>
       <section>
         <p>{t('aboutDescription')}</p>
       </section>
-    </Page>
+    </Container>
   );
 };
 
