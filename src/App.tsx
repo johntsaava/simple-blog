@@ -6,10 +6,11 @@ import { Loading } from '~/components/loading';
 import { articlesInitialState, articlesReducer } from '~/reducers/article-reducer';
 import { locales } from '~/utils/locales';
 
-const Home = lazy(() => import('~/pages/home'));
-const About = lazy(() => import('~/pages/about'));
-const NotFound = lazy(() => import('~/pages/not-found'));
-const ArticleCreate = lazy(() => import('~/pages/article-create'));
+const HomePage = lazy(() => import('~/pages/home'));
+const AboutPage = lazy(() => import('~/pages/about'));
+const NotFoundPage = lazy(() => import('~/pages/not-found'));
+const ArticleCreatePage = lazy(() => import('~/pages/article-create'));
+const ArticlePage = lazy(() => import('~/pages/article'));
 
 const LangGuard: React.FC = () => {
   const params = useParams();
@@ -33,7 +34,15 @@ function App() {
             index
             element={
               <Suspense fallback={<Loading />}>
-                <Home articles={articles} />
+                <HomePage articles={articles} />
+              </Suspense>
+            }
+          />
+          <Route
+            path='article/:id'
+            element={
+              <Suspense fallback={<Loading />}>
+                <ArticlePage articles={articles} />
               </Suspense>
             }
           />
@@ -41,7 +50,7 @@ function App() {
             path='create'
             element={
               <Suspense fallback={<Loading />}>
-                <ArticleCreate dispatch={dispatch} />
+                <ArticleCreatePage dispatch={dispatch} />
               </Suspense>
             }
           />
@@ -49,7 +58,7 @@ function App() {
             path='about'
             element={
               <Suspense fallback={<Loading />}>
-                <About />
+                <AboutPage />
               </Suspense>
             }
           />
@@ -57,7 +66,7 @@ function App() {
             path='*'
             element={
               <Suspense fallback={<Loading />}>
-                <NotFound />
+                <NotFoundPage />
               </Suspense>
             }
           />

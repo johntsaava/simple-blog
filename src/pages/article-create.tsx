@@ -10,7 +10,7 @@ type ArticleCreateProps = {
   dispatch: Dispatch<ArticlesAction>;
 };
 
-const ArticleCreate: React.FC<ArticleCreateProps> = ({ dispatch }) => {
+const ArticleCreatePage: React.FC<ArticleCreateProps> = ({ dispatch }) => {
   const navigate = useNavigate();
   const params = useParams();
   const lang = params.lang as string;
@@ -84,4 +84,4 @@ const ArticleCreate: React.FC<ArticleCreateProps> = ({ dispatch }) => {
   );
 };
 
-export default ArticleCreate;
+export default ArticleCreatePage;

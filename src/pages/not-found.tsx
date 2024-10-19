@@ -1,13 +1,12 @@
+import { NotFound } from '~/components/not-found';
 import { Page } from '~/components/page';
 
-const NotFound: React.FC = () => {
+const NotFoundPage: React.FC = () => {
   return (
     <Page>
-      <section>
-        <p>404</p>
-      </section>
+      <NotFound />
     </Page>
   );
 };
 
-export default NotFound;
+export default NotFoundPage;

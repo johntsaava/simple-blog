@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { Article } from '~/components/article';
 import { ArticleList } from '~/components/article-list';
@@ -10,7 +10,7 @@ type HomeProps = {
   articles: ArticleType[];
 };
 
-const Home: React.FC<HomeProps> = ({ articles }) => {
+const HomePage: React.FC<HomeProps> = ({ articles }) => {
   const params = useParams();
   const lang = params.lang as string;
 
@@ -20,18 +20,20 @@ const Home: React.FC<HomeProps> = ({ articles }) => {
       <Page>
         <ArticleList>
           {articles.map((article) => (
-            <Article.Root key={article.id}>
-              <Article.Picture
-                src={article.imageSrc}
-                alt={article.title[lang]}
-                width={300}
-                height={300}
-              />
-              <Article.Info>
-                <Article.Title>{article.title[lang]}</Article.Title>
-                <Article.Description>{article.description[lang]}</Article.Description>
-              </Article.Info>
-            </Article.Root>
+            <Link to={`article/${article.id}`} key={article.id}>
+              <Article.Root>
+                <Article.Picture
+                  src={article.imageSrc}
+                  alt={article.title[lang]}
+                  width={300}
+                  height={300}
+                />
+                <Article.Info>
+                  <Article.Title>{article.title[lang]}</Article.Title>
+                  <Article.Description>{article.description[lang]}</Article.Description>
+                </Article.Info>
+              </Article.Root>
+            </Link>
           ))}
         </ArticleList>
       </Page>
@@ -39,4 +41,4 @@ const Home: React.FC<HomeProps> = ({ articles }) => {
   );
 };
 
-export default Home;
+export default HomePage;
