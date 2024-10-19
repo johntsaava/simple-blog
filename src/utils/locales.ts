@@ -1,5 +1,6 @@
 const namespaces = {
   ka: {
+    image: 'სურათი',
     nameKa: 'სათაური ქართულად',
     nameEn: 'სათაური ინგლისურად',
     descriptionKa: 'აღწერა ქართულად',
@@ -16,6 +17,7 @@ const namespaces = {
       'ჩვენი მიზანია შევქმნათ პლატფორმა, სადაც მომხმარებლებს შეუძლიათ გამოხატონ საკუთარი აზრი და გაეცნონ უახლეს ინფორმაციას. ბლოგი განკუთვნილია ყველა ასაკის მკითხველისთვის, ვინც დაინტერესებულია თანამედროვე საკითხებით.',
   },
   en: {
+    image: 'Image',
     nameKa: 'Title in Georgian',
     nameEn: 'Title in English',
     descriptionKa: 'Description in Georgian',

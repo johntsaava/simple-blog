@@ -1,4 +1,4 @@
-import { Dispatch } from 'react';
+import { Dispatch, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { Button } from '~/components/button';
@@ -15,6 +15,18 @@ const ArticleCreate: React.FC<ArticleCreateProps> = ({ dispatch }) => {
   const params = useParams();
   const lang = params.lang as string;
   const t = getTranslation(lang);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleCreateArticle = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -29,7 +41,7 @@ const ArticleCreate: React.FC<ArticleCreateProps> = ({ dispatch }) => {
       type: 'ADD_ARTICLE',
       payload: {
         id: new Date().getTime(),
-        imageSrc: 'https://via.assets.so/img.jpg?w=300&h=300&tc=white&bg=lightgrey',
+        imageSrc: imagePreview || '/images/default.webp',
         title: { ka: titleKa, en: titleEn },
         description: { ka: descriptionKa, en: descriptionEn },
       },
@@ -48,6 +60,12 @@ const ArticleCreate: React.FC<ArticleCreateProps> = ({ dispatch }) => {
           gap: '1rem',
         }}
       >
+        <label htmlFor='image'>{t('image')}</label>
+        <input id='image' type='file' accept='image/*' onChange={handleImageUpload} />
+        {imagePreview && (
+          <img src={imagePreview} alt='Preview' style={{ maxWidth: '300px', maxHeight: '300px' }} />
+        )}
+
         <label htmlFor='titleKa'>{t('nameKa')}</label>
         <input id='titleKa' type='text' name='titleKa' required minLength={2} maxLength={100} />
 

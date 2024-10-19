@@ -10,7 +10,7 @@ export type Article = {
 export const articlesInitialState: Article[] = [
   {
     id: 1,
-    imageSrc: 'https://via.assets.so/img.jpg?w=300&h=300&tc=white&bg=lightgrey',
+    imageSrc: '/images/default.webp',
     title: {
       ka: 'ინოვაციური ტექნოლოგიები და მათი გავლენა მომავალზე',
       en: 'Innovative Technologies and Their Impact on the Future',

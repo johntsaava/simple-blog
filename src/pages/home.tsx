@@ -21,7 +21,12 @@ const Home: React.FC<HomeProps> = ({ articles }) => {
         <ArticleList>
           {articles.map((article) => (
             <Article.Root key={article.id}>
-              <img src={article.imageSrc} alt={article.title[lang]} />
+              <Article.Picture
+                src={article.imageSrc}
+                alt={article.title[lang]}
+                width={300}
+                height={300}
+              />
               <Article.Info>
                 <Article.Title>{article.title[lang]}</Article.Title>
                 <Article.Description>{article.description[lang]}</Article.Description>
