@@ -1,6 +1,7 @@
 import { Dispatch } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
+import { Button } from '~/components/button';
 import { Page } from '~/components/page';
 import { ArticlesAction } from '~/reducers/article-reducer';
 import { getTranslation } from '~/utils/locales';
@@ -59,7 +60,7 @@ const ArticleCreate: React.FC<ArticleCreateProps> = ({ dispatch }) => {
         <label htmlFor='descriptionEn'>{t('descriptionEn')}</label>
         <textarea id='descriptionEn' name='descriptionEn' />
 
-        <button type='submit'>{t('create')}</button>
+        <Button type='submit'>{t('create')}</Button>
       </form>
     </Page>
   );
