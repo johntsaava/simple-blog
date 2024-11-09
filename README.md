@@ -1,50 +1,104 @@
-# React + TypeScript + Vite
+# json-server vercel deploy guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 1. Install json-server 0.17.4
 
-Currently, two official plugins are available:
+Run the following command to install json-server version 0.17.4:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+npm i json-server@0.17.4
+```
 
-## Expanding the ESLint configuration
+### 2. Add vercel.json file
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Create a `vercel.json` file with the following content:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
+```json
+{
+  "builds": [
+    {
+      "src": "server.cjs",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["db.json"]
+      }
     },
-  },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist",
+        "buildCommand": "yarn build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server.cjs"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
+```
+
+### 3. Add server.cjs file
+
+Create a `server.cjs` file with the following content:
+
+```javascript
+const jsonServer = require('json-server');
+const fs = require('fs');
+const path = require('path');
+const db = JSON.parse(fs.readFileSync(path.join('db.json')));
+
+const server = jsonServer.create();
+const router = jsonServer.router(db);
+const middlewares = jsonServer.defaults();
+
+server.use(
+  jsonServer.rewriter({
+    '/api/*': '/$1',
+  }),
+);
+server.use(middlewares);
+server.use(router);
+
+server.listen(3000, () => {
+  console.log('JSON Server is running');
+});
+
+module.exports = server;
+```
+
+### 4. Change run-db script
+
+Update the `package.json` file to include the following script:
+
+```json
+"run-db": "node server.cjs",
+```
+
+### 5. axios baseURL should start with /api
+
+In your application, ensure that the axios baseURL starts with `/api`:
+
+```javascript
+export const httpClient = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
 });
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 6. env file example
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+In your environment file, set `VITE_API_BASE_URL` to the following:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
+```bash
+VITE_API_BASE_URL=http://localhost:3000/api
 ```
