@@ -102,3 +102,7 @@ In your environment file, set `VITE_API_BASE_URL` to the following:
 ```bash
 VITE_API_BASE_URL=http://localhost:3000/api
 ```
+
+### 7. Demo Link
+
+Check out the live demo at: https://simple-blog-tau-six.vercel.app/
