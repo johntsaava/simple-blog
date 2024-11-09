@@ -22,6 +22,10 @@
       "dest": "server.cjs"
     },
     {
+      "src": "/(.*)\\.(js|css|png|jpg|svg|ico|json)",
+      "dest": "/dist/$1.$2"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
