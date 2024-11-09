@@ -27,7 +27,7 @@ Create a `vercel.json` file with the following content:
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist",
-        "buildCommand": "yarn build"
+        "buildCommand": "npm run build"
       }
     }
   ],
