@@ -4,7 +4,7 @@
       "src": "server.cjs",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["tmp/db.json"]
+        "includeFiles": ["db.json"]
       }
     },
     {
