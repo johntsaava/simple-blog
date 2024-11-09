@@ -1,0 +1,7 @@
+.actionsRoot {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}

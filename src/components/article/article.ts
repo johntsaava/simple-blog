@@ -3,3 +3,4 @@ export { Info } from './components/info';
 export { Root } from './components/root';
 export { Title } from './components/title';
 export { Picture } from './components/picture';
+export { Actions } from './components/actions';

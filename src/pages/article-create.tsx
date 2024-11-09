@@ -1,21 +1,22 @@
-import { Dispatch, useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
+import * as api from '~/api/articles';
 import { Button } from '~/components/button';
 import { Container } from '~/components/container';
-import { ArticlesAction } from '~/reducers/article-reducer';
+import { queryClient } from '~/main';
 import { getTranslation } from '~/utils/locales';
 
-type ArticleCreateProps = {
-  dispatch: Dispatch<ArticlesAction>;
-};
-
-const ArticleCreatePage: React.FC<ArticleCreateProps> = ({ dispatch }) => {
+const ArticleCreatePage: React.FC = () => {
   const navigate = useNavigate();
   const params = useParams();
   const lang = params.lang as string;
   const t = getTranslation(lang);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const createArticle = useMutation({
+    mutationFn: api.createArticle,
+  });
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -37,15 +38,20 @@ const ArticleCreatePage: React.FC<ArticleCreateProps> = ({ dispatch }) => {
     const descriptionKa = formData.get('descriptionKa') as string;
     const descriptionEn = formData.get('descriptionEn') as string;
 
-    dispatch({
-      type: 'ADD_ARTICLE',
-      payload: {
-        id: new Date().getTime(),
+    createArticle.mutate(
+      {
         imageSrc: imagePreview || '/images/default.webp',
         title: { ka: titleKa, en: titleEn },
         description: { ka: descriptionKa, en: descriptionEn },
       },
-    });
+      {
+        onSuccess() {
+          queryClient.invalidateQueries({
+            queryKey: ['articles'],
+          });
+        },
+      },
+    );
 
     navigate('/');
   };

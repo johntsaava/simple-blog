@@ -1,9 +1,8 @@
-import { Suspense, lazy, useReducer } from 'react';
+import { Suspense, lazy } from 'react';
 import { Navigate, Outlet, Route, Routes, useParams } from 'react-router-dom';
 
 import { Layout } from '~/components/layout';
 import { Loading } from '~/components/loading';
-import { articlesInitialState, articlesReducer } from '~/reducers/article-reducer';
 import { defaultLocale, locales } from '~/utils/locales';
 
 const HomePage = lazy(() => import('~/pages/home'));
@@ -24,8 +23,6 @@ const LangGuard: React.FC = () => {
 };
 
 function App() {
-  const [articles, dispatch] = useReducer(articlesReducer, articlesInitialState);
-
   return (
     <Routes>
       <Route path=':lang' element={<LangGuard />}>
@@ -34,7 +31,7 @@ function App() {
             index
             element={
               <Suspense fallback={<Loading />}>
-                <HomePage articles={articles} />
+                <HomePage />
               </Suspense>
             }
           />
@@ -42,7 +39,7 @@ function App() {
             path='article/:id'
             element={
               <Suspense fallback={<Loading />}>
-                <ArticlePage articles={articles} />
+                <ArticlePage />
               </Suspense>
             }
           />
@@ -50,7 +47,7 @@ function App() {
             path='create'
             element={
               <Suspense fallback={<Loading />}>
-                <ArticleCreatePage dispatch={dispatch} />
+                <ArticleCreatePage />
               </Suspense>
             }
           />
