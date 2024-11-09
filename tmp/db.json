@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "id": "27225",
+      "imageSrc": "https://europeanspaceflight.com/wp-content/uploads/2024/11/Santa-Maria-to-be-Landing-Site-of-Inaugural-Space-Rider-Flight.jpg",
+      "title": {
+        "ka": "Santa Maria to be Landing Site of Inaugural Space Rider Flight",
+        "en": "Santa Maria to be Landing Site of Inaugural Space Rider Flight"
+      },
+      "description": {
+        "ka": "The Portuguese Space Agency announced 8 November that the island of Santa Maria has been chosen as the landing site for the inaugural flight of Space Rider. Space Rider is an eight-metre reusable orbital vehicle designed to serve as a robotic laboratory in orbit, enabling scientific research and technology demonstrations. The vehicle is capable of […]",
+        "en": "The Portuguese Space Agency announced 8 November that the island of Santa Maria has been chosen as the landing site for the inaugural flight of Space Rider. Space Rider is an eight-metre reusable orbital vehicle designed to serve as a robotic laboratory in orbit, enabling scientific research and technology demonstrations. The vehicle is capable of […]"
+      }
+    },
+    {
       "id": "27224",
       "imageSrc": "https://spacepolicyonline.com/wp-content/uploads/2024/11/Crew-8-post-mission-bfg-2-Nov-8-224-300x245.png",
       "title": {
@@ -106,18 +118,6 @@
       "description": {
         "ka": "Saddle up, space cowboys. It may get bumpy for a while.",
         "en": "Saddle up, space cowboys. It may get bumpy for a while."
-      }
-    },
-    {
-      "id": "27215",
-      "imageSrc": "https://www.nasa.gov/wp-content/uploads/2024/02/acosta-daughter-vms-igted.png?w=1920",
-      "title": {
-        "ka": "Math, Mentorship, Motherhood: Behind the Scenes with NASA Engineers",
-        "en": "Math, Mentorship, Motherhood: Behind the Scenes with NASA Engineers"
-      },
-      "description": {
-        "ka": "Engineering is a huge field with endless applications. From aerospace to ergonomics, engineers play an important role in designing, building, and testing technologies all around us. We asked three engineers at NASA’s Ames Research Center in California’s Silicon Valley to share their experiences, from early challenges they faced in their careers to the day-to-day of […]",
-        "en": "Engineering is a huge field with endless applications. From aerospace to ergonomics, engineers play an important role in designing, building, and testing technologies all around us. We asked three engineers at NASA’s Ames Research Center in California’s Silicon Valley to share their experiences, from early challenges they faced in their careers to the day-to-day of […]"
       }
     }
   ]

@@ -18,11 +18,16 @@ fetch('https://api.spaceflightnewsapi.net/v4/articles')
         },
       })),
     };
-    fs.writeFile(path.join(__dirname, 'db.json'), JSON.stringify(data, null, 2), 'utf8', (err) => {
-      if (err) {
-        console.log('File write failed:', err);
-        return;
-      }
-      console.log('Data written to db.json');
-    });
+    fs.writeFile(
+      path.join(__dirname, 'tmp/db.json'),
+      JSON.stringify(data, null, 2),
+      'utf8',
+      (err) => {
+        if (err) {
+          console.log('File write failed:', err);
+          return;
+        }
+        console.log('Data written to tmp/db.json');
+      },
+    );
   });
