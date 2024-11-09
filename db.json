@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "id": "27224",
+      "imageSrc": "https://spacepolicyonline.com/wp-content/uploads/2024/11/Crew-8-post-mission-bfg-2-Nov-8-224-300x245.png",
+      "title": {
+        "ka": "Crew-8 Will Reveal Hospitalization Details “In Fullness of Time”",
+        "en": "Crew-8 Will Reveal Hospitalization Details “In Fullness of Time”"
+      },
+      "description": {
+        "ka": "The three NASA Crew-8 astronauts who returned to Earth last month firmly declined to answer questions today about who was hospitalized and why after splashdown. Astronaut Michael Barratt, a physician...",
+        "en": "The three NASA Crew-8 astronauts who returned to Earth last month firmly declined to answer questions today about who was hospitalized and why after splashdown. Astronaut Michael Barratt, a physician..."
+      }
+    },
+    {
       "id": "27223",
       "imageSrc": "https://assets.science.nasa.gov/dynamicimage/assets/science/missions/msl/2024/curiosity-rover-updates/11/https___mars.nasa.gov_msl-raw-images_proj_msl_redops_ods_surface_sol_04355_opgs_edr_ncam_NLB_784117981EDR_F1110120NCAM00354M_.JPG?w=1024&#038;h=1024&#038;fit=clip&#038;crop=faces%2Cfocalpoint",
       "title": {
@@ -58,6 +70,18 @@
       "description": {
         "ka": "PLD Space unveiled an aggressive 10-year plan last month at the company’s new headquarters building in Elche, Spain. This plan will begin by upgrading its under-development Miura 5 rocket with propulsive landing capability, which will aid in introducing a whole new family of rockets.",
         "en": "PLD Space unveiled an aggressive 10-year plan last month at the company’s new headquarters building in Elche, Spain. This plan will begin by upgrading its under-development Miura 5 rocket with propulsive landing capability, which will aid in introducing a whole new family of rockets."
+      }
+    },
+    {
+      "id": "27218",
+      "imageSrc": "https://i0.wp.com/spacenews.com/wp-content/uploads/2024/11/1730465372658.jpeg",
+      "title": {
+        "ka": "Maxar Intelligence divests sensor technology business to ARKA Group",
+        "en": "Maxar Intelligence divests sensor technology business to ARKA Group"
+      },
+      "description": {
+        "ka": "ARKA acquired Maxar’s business unit known as the Radar and Sensor Technology (RST) group, based in Ypsilanti, Michigan",
+        "en": "ARKA acquired Maxar’s business unit known as the Radar and Sensor Technology (RST) group, based in Ypsilanti, Michigan"
       }
     },
     {
