@@ -1,4 +1,6 @@
 const jsonServer = require('json-server');
+const os = require('os');
+console.log('tmpdir', os.tmpdir());
 
 const server = jsonServer.create();
 const router = jsonServer.router('tmp/db.json');
