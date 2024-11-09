@@ -1,11 +1,12 @@
 {
-  "functions": {
-    "server.cjs": {
-      "memory": 1024,
-      "includeFiles": "tmp/db.json"
-    }
-  },
   "builds": [
+    {
+      "src": "server.cjs",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["tmp/db.json"]
+      }
+    },
     {
       "src": "package.json",
       "use": "@vercel/static-build",
