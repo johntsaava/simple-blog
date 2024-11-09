@@ -10,7 +10,11 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/((?!/api).)*",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/api/(.*)",
       "dest": "server.cjs"
     }
   ]

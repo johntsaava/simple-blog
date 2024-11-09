@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write .",
-    "run-db": "npx json-server db.json",
+    "run-db": "node server.cjs",
     "seed-db": "node seed-db.cjs"
   },
   "dependencies": {
