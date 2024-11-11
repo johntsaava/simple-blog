@@ -11,10 +11,17 @@ export type Article = {
 
 const errorMessage = 'Oops! Something went wrong. Please try again later.';
 
-export const getArticles = async () => {
+// Function to get the page number by relation type (e.g., "next")
+function getNextPageNumber(relType: string, pagination: string) {
+  const regex = new RegExp(`<[^>]*[?&]_page=(\\d+)[^>]*>; rel="${relType}"`);
+  const match = pagination.match(regex);
+  return match ? parseInt(match[1], 10) : null;
+}
+
+export const getArticles = async ({ page, limit }: { page: number; limit: number }) => {
   try {
-    const res = await httpClient.get<Article[]>('/articles');
-    return res.data;
+    const res = await httpClient.get<Article[]>(`/articles?_page=${page}&_limit=${limit}`);
+    return { rows: res.data, nextOffset: getNextPageNumber('next', res.headers.link) };
   } catch (error) {
     console.error(error);
     throw errorMessage;

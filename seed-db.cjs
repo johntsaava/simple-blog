@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-fetch('https://api.spaceflightnewsapi.net/v4/articles')
+fetch('https://api.spaceflightnewsapi.net/v4/articles?limit=1000')
   .then((res) => res.json())
   .then((res) => {
     const data = {
